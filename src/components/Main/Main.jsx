@@ -14,7 +14,7 @@ const Main = () => {
         if (value !== "") {
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
           const data = await response.data;
-          setChefs([data]);
+          setChefs([data, ...chefs]);
           setValue("");
         }
       } catch (err) {
